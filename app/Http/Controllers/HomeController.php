@@ -14,10 +14,47 @@ class HomeController extends Controller
     public function index()
     {
         return view('user.home', [
-            'title' => 'Sewa Supir - Home',
+            'title' => 'Dokter Gigi - Home',
             'active' => 'home',
         ]);
     }
+
+    public function janjiTemu()
+    {
+        return view('user.janjiTemu', [
+            'title' => 'Dokter Gigi - Janji Temu',
+            'active' => 'janji temu',
+        ]);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public function homeAdmin()
     {

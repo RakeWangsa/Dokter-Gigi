@@ -5,12 +5,12 @@
             @if (auth()->user()->role=="admin")
                <a class="nav-link collapsed {{ ($active === "home") ? 'active' : '' }}" href="/home/admin"> <i class="bi bi-grid"></i><span>Home</span> </a>
                <a class="nav-link collapsed {{ ($active === "log activity") ? 'active' : '' }}" href="/home/admin/logActivity"> <i class="bi bi-eye"></i><span>Log Activity</span> </a>
-            @elseif (auth()->user()->role=="user")
+            @endif 
+         @endauth 
                <a class="nav-link collapsed {{ ($active === "home") ? 'active' : '' }}" href="/home"> <i class="bi bi-grid"></i><span>Home</span> </a>
-               <a class="nav-link collapsed {{ ($active === "pesanan") ? 'active' : '' }}" href="/pesananSaya"> <i class="bi bi-list-ul"></i><span>Pesanan saya</span> </a> 
-               <a class="nav-link collapsed {{ ($active === "hubungi") ? 'active' : '' }}" href="https://wa.me/6281818180551"> <i class="bi bi-whatsapp"></i><span>Hubungi Admin</span> </a> 
-            @endif        
-         @endauth    
+               <a class="nav-link collapsed {{ ($active === "janji temu") ? 'active' : '' }}" href="/JanjiTemu"> <i class="bi bi-person-lines-fill"></i><span>Janji Temu</span> </a> 
+               <a class="nav-link collapsed {{ ($active === "toko obat") ? 'active' : '' }}" href="https://wa.me/6281818180551"> <i class="bi bi-capsule-pill"></i><span>Toko Obat</span> </a> 
+               <a class="nav-link collapsed {{ ($active === "history") ? 'active' : '' }}" href="/pesananSaya"> <i class="bi bi-list-ul"></i><span>History</span> </a> 
       </li>
       @auth
          <li class="nav-item">

@@ -22,7 +22,7 @@
 <div class="row">
       <div class="card col-md-12 mt-2 pb-4">
          <div class="card-body">
-             <h5 class="card-title">Tentang "Sewa Supir"</h5>
+             <h5 class="card-title">Tentang "Dokter Gigi"</h5>
              <div class="table-container border" style="border-radius: 20px">
                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
                   <div class="carousel-indicators">
@@ -35,21 +35,21 @@
                   </div>
                   <div class="carousel-inner" style="border-radius: 20px">
                     <div class="carousel-item active">
-                      <img src="{{asset('admintemplate/img/slide1.jpg')}}" class="d-block w-100" alt="gambar1">
+                      <img src="{{asset('admintemplate/img/slides-1.jpg')}}" class="d-block w-100" alt="gambar1" style="height:500px">
                       <div class="carousel-caption d-none d-md-block">
-                        <h3 class="text-warning font-weight-bold" style="-webkit-text-stroke: 1px yellow; text-stroke: 1px yellow;">Kami menyediakan layanan penyewaan supir yang handal dan terlatih untuk mengantar anda ke tujuan.</h3>
+                        <h3 class="text-warning font-weight-bold" style="-webkit-text-stroke: 1px yellow; text-stroke: 1px yellow;">Vestibulum fermentum enim eu rutrum gravida. Etiam non gravida neque, vitae scelerisque nisl.</h3>
                       </div>
                     </div>
                     <div class="carousel-item">
-                      <img src="{{asset('admintemplate/img/slide2.jpg')}}" class="d-block w-100" alt="gambar2">
+                      <img src="{{asset('admintemplate/img/slides-2.jpg')}}" class="d-block w-100" alt="gambar2" style="height:500px">
                       <div class="carousel-caption d-none d-md-block">
-                        <h3 class="text-warning font-weight-bold" style="-webkit-text-stroke: 1px yellow; text-stroke: 1px yellow;">Kami memiliki tim supir yang profesional dan berpengalaman dalam mengemudikan berbagai jenis kendaraan, termasuk mobil pribadi, bus, minibus, dan kendaraan khusus. </h3>
+                        <h3 class="text-warning font-weight-bold" style="-webkit-text-stroke: 1px yellow; text-stroke: 1px yellow;">Quisque pellentesque mauris a sapien commodo, ut tempus metus gravida. Sed vehicula laoreet tortor eget commodo.</h3>
                       </div>
                     </div>
                     <div class="carousel-item">
-                      <img src="{{asset('admintemplate/img/slide3.jpg')}}" class="d-block w-100" alt="gambar3">
+                      <img src="{{asset('admintemplate/img/slides-3.jpg')}}" class="d-block w-100" alt="gambar3" style="height:500px">
                       <div class="carousel-caption d-none d-md-block">
-                        <h3 class="text-warning font-weight-bold" style="-webkit-text-stroke: 1px yellow; text-stroke: 1px yellow;">Kami juga memiliki jaringan supir yang luas dan terlatih di berbagai kota di Indonesia</h3>
+                        <h3 class="text-warning font-weight-bold" style="-webkit-text-stroke: 1px yellow; text-stroke: 1px yellow;">Maecenas non cursus ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</h3>
 
                       </div>
                     </div>
@@ -66,17 +66,12 @@
             </div>
 
             <div class="text-justify mt-4 mb-4 animate__animated animate__fadeIn">
-               <p>Sewa Supir adalah solusi terbaik untuk kebutuhan transportasi Anda. Kami memahami bahwa perjalanan Anda adalah hal yang penting, oleh karena itu kami menyediakan layanan supir yang terlatih dan profesional untuk membantu Anda dalam perjalanan bisnis, perjalanan wisata, atau sekadar berkendara dengan aman dan nyaman.</p>
-               
-               <p>Kami memastikan bahwa setiap supir kami telah melalui seleksi yang ketat dan pelatihan yang intensif, sehingga mereka mampu mengemudikan kendaraan dengan aman dan terampil. Selain itu, kami juga memastikan bahwa kendaraan kami selalu dalam kondisi terbaik, sehingga Anda dapat merasa nyaman dan aman selama dalam perjalanan.</p>
-               
-               <p>Kami juga menawarkan opsi sewa kendaraan dengan berbagai jenis dan kapasitas, mulai dari mobil pribadi hingga bus dan kendaraan khusus. Kami juga menawarkan opsi sewa harian, mingguan, maupun bulanan, serta layanan antar jemput bandara dan pengemudi cadangan untuk memastikan kenyamanan dan keamanan Anda selama dalam perjalanan.</p>
-               
-               <p>Jadi, jika Anda membutuhkan layanan transportasi yang handal dan terpercaya, Sewa Supir siap membantu. Hubungi kami sekarang dan nikmati pengalaman berkendara yang aman dan nyaman dengan tim supir kami yang profesional dan terlatih.</p>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet ex sit amet luctus sagittis. Proin iaculis velit ut est tincidunt, non laoreet erat eleifend. Nullam sed magna eget est rhoncus pulvinar. Suspendisse sit amet nisi sit amet nunc tristique sollicitudin. Ut id commodo purus, vitae malesuada metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce ac ante id dui iaculis accumsan. Nulla facilisi. Morbi lacinia justo ac metus bibendum, a laoreet elit auctor. Aenean fermentum posuere purus, a imperdiet lacus dapibus a. Donec condimentum ipsum sit amet luctus convallis. Nulla bibendum purus at lorem auctor, nec convallis dolor eleifend. Pellentesque in elit pretium, venenatis lacus a, semper est. Quisque venenatis volutpat eleifend. Integer venenatis libero vitae risus malesuada rutrum.
+                Duis pretium est ac justo blandit pulvinar. Suspendisse lobortis mauris nec odio tincidunt, vel condimentum massa eleifend. Morbi fringilla tincidunt ex, sed tempus metus placerat ut. Vestibulum iaculis facilisis magna, nec gravida enim ullamcorper a. Sed varius ex nisl, ut viverra mi venenatis a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur et justo sed mi finibus malesuada. In rutrum tellus id diam mattis, id condimentum lacus ullamcorper. Suspendisse interdum dui vel cursus consectetur. Morbi nec tortor et lectus consectetur aliquam. Nulla facilisi.</p>
            </div>
 
            {{-- <h5 class="card-title">Cara Kerja "Sewa Supir"</h5> --}}
-           <a class="btn btn-primary" href="/pesananSaya/buatPesanan">Sewa Sekarang!</a>
+           {{-- <a class="btn btn-primary" href="/pesananSaya/buatPesanan">Sewa Sekarang!</a> --}}
                  
          </div>
       </div>

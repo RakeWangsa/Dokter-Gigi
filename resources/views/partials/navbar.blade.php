@@ -1,6 +1,6 @@
 @include('layouts.head')
 <header id="header" class="header fixed-top d-flex align-items-center">
-   <div class="d-flex align-items-center justify-content-between"> <a href="#" class="logo d-flex align-items-center"> <img src="#" alt=""> <span class="d-none d-lg-block">SEWA SUPIR</span> </a> <i class="bi bi-list toggle-sidebar-btn"></i></div>
+   <div class="d-flex align-items-center justify-content-between"> <a href="#" class="logo d-flex align-items-center"> <img src="{{ asset('admintemplate/img/logoaditya.png') }}" alt=""> <span class="d-none d-lg-block">DOKTER GIGI</span> </a> <i class="bi bi-list toggle-sidebar-btn"></i></div>
    <nav class="header-nav ms-auto">
       @auth
          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown"><img src="{{asset('admintemplate/img/profil.png')}}" alt="Profile" class="rounded-circle"><span class="d-none d-md-block dropdown-toggle ps-2">{{ auth()->user()->name }}</span></a>
