@@ -7,6 +7,7 @@ use App\Models\Pesanan;
 use App\Models\LogActivity;
 
 use App\Models\janjiTemu;
+use App\Models\pembelianObat;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
 use Illuminate\Validation\Rule;
@@ -93,12 +94,115 @@ class HomeController extends Controller
     }
     public function checkout(Request $request)
     {
-        $tes="tess";
-        dd($request->obat1);
-        return view('user.tokoObat', [
-            'title' => 'Dokter Gigi - Toko Obat',
-            'active' => 'toko obat',
+        $skrg = Carbon::now()->addHours(7);
+        $email=auth()->user()->email;
+        $id_user = DB::table('Users')
+            ->where('email', $email)
+            ->pluck('id')
+            ->first();
+        $nama = DB::table('Users')
+            ->where('email', $email)
+            ->pluck('nama')
+            ->first();
+        $harga_obat = DB::table('obat')
+            ->pluck('harga_obat');
+
+        $total_harga_obat1=$harga_obat[0]*$request->obat1;
+        $total_harga_obat2=$harga_obat[1]*$request->obat2;
+        $total_harga_obat3=$harga_obat[2]*$request->obat3;
+        $total_harga_obat4=$harga_obat[3]*$request->obat4;
+        $total_harga_obat5=$harga_obat[4]*$request->obat5;
+        $total_harga_obat6=$harga_obat[5]*$request->obat6;
+        $total_harga_obat7=$harga_obat[6]*$request->obat7;
+        $total_harga_obat8=$harga_obat[7]*$request->obat8;
+        $total_harga_obat9=$harga_obat[8]*$request->obat9;
+        $total_harga_obat10=$harga_obat[9]*$request->obat10;
+        $total_harga_obat11=$harga_obat[10]*$request->obat11;
+        $total_harga_obat12=$harga_obat[11]*$request->obat12;
+        $total_harga=$total_harga_obat1+$total_harga_obat2+$total_harga_obat3+$total_harga_obat4+$total_harga_obat5+$total_harga_obat6+$total_harga_obat7+$total_harga_obat8+$total_harga_obat9+$total_harga_obat10+$total_harga_obat11+$total_harga_obat12;
+        
+        $nama_obat='';
+        if($request->obat1>0){
+            $nama_obat.=DB::table('obat')
+            ->where('id','1')
+            ->pluck('nama_obat')
+            ->first().'('.$request->obat1.'), ';
+        }
+        if($request->obat2>0){
+            $nama_obat.=DB::table('obat')
+            ->where('id','2')
+            ->pluck('nama_obat')
+            ->first().'('.$request->obat2.'), ';
+        }
+        if($request->obat3>0){
+            $nama_obat.=DB::table('obat')
+            ->where('id','3')
+            ->pluck('nama_obat')
+            ->first().'('.$request->obat3.'), ';
+        }
+        if($request->obat4>0){
+            $nama_obat.=DB::table('obat')
+            ->where('id','4')
+            ->pluck('nama_obat')
+            ->first().'('.$request->obat4.'), ';
+        }
+        if($request->obat5>0){
+            $nama_obat.=DB::table('obat')
+            ->where('id','5')
+            ->pluck('nama_obat')
+            ->first().'('.$request->obat5.'), ';
+        }
+        if($request->obat6>0){
+            $nama_obat.=DB::table('obat')
+            ->where('id','6')
+            ->pluck('nama_obat')
+            ->first().'('.$request->obat6.'), ';
+        }
+        if($request->obat7>0){
+            $nama_obat.=DB::table('obat')
+            ->where('id','7')
+            ->pluck('nama_obat')
+            ->first().'('.$request->obat7.'), ';
+        }
+        if($request->obat8>0){
+            $nama_obat.=DB::table('obat')
+            ->where('id','8')
+            ->pluck('nama_obat')
+            ->first().'('.$request->obat8.'), ';
+        }
+        if($request->obat9>0){
+            $nama_obat.=DB::table('obat')
+            ->where('id','9')
+            ->pluck('nama_obat')
+            ->first().'('.$request->obat9.'), ';
+        }
+        if($request->obat10>0){
+            $nama_obat.=DB::table('obat')
+            ->where('id','10')
+            ->pluck('nama_obat')
+            ->first().'('.$request->obat10.'), ';
+        }
+        if($request->obat11>0){
+            $nama_obat.=DB::table('obat')
+            ->where('id','11')
+            ->pluck('nama_obat')
+            ->first().'('.$request->obat11.'), ';
+        }
+        if($request->obat12>0){
+            $nama_obat.=DB::table('obat')
+            ->where('id','12')
+            ->pluck('nama_obat')
+            ->first().'('.$request->obat12.'), ';
+        }
+        $nama_obat = substr($nama_obat, 0, -2);
+        pembelianObat::insert([
+            'id_user' => $id_user,
+            'nama' => $nama,
+            'nama_obat' => $nama_obat,
+            'total_harga' => $total_harga,
+            'waktu'=> $skrg,
         ]);
+        return redirect('/History')->with('success','Berhasil membeli obat');
     }
 
     public function history()
