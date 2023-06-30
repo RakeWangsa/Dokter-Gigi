@@ -23,9 +23,19 @@ class HomeController extends Controller
 
     public function janjiTemu()
     {
+        $email=auth()->user()->email;
+        $id_user = DB::table('Users')
+            ->where('email', $email)
+            ->pluck('id')
+            ->first();
+        $janjiku = DB::table('janji_temu')
+            ->where('id_user', $id_user)
+            ->select('*')
+            ->get();
         return view('user.janjiTemu', [
             'title' => 'Dokter Gigi - Janji Temu',
             'active' => 'janji temu',
+            'janjiku' => $janjiku,
         ]);
     }
     public function buatJanjiTemu()
@@ -52,13 +62,16 @@ class HomeController extends Controller
         $email=auth()->user()->email;
         $id_user = DB::table('Users')
             ->where('email', $email)
-            ->select('id')
-            ->get();
+            ->pluck('id')
+            ->first();
+        $waktu = Carbon::parse($request->waktu)->format('Y-m-d H:i');
         janjiTemu::insert([
             'id_user' => $id_user,
-            'nama' => $request->dokter,
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+            'kontak' => $request->kontak,
             'nama_dokter' => $request->dokter,
-            'waktu'=> $request->waktu,
+            'waktu'=> $waktu,
         ]);
         return redirect('/JanjiTemu')->with('success','Berhasil membuat janji temu');
     }
