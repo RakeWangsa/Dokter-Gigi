@@ -28,20 +28,43 @@ class HomeController extends Controller
     }
     public function buatJanjiTemu()
     {
+        $email=auth()->user()->email;
+        $info = DB::table('Users')
+            ->where('email', $email)
+            ->select('*')
+            ->get();
+        $dokter = DB::table('Users')
+            ->where('role', 'dokter')
+            ->select('*')
+            ->get();
         return view('user.buatJanjiTemu', [
             'title' => 'Dokter Gigi - Buat Janji Temu',
             'active' => 'janji temu',
+            'info' => $info,
+            'dokter' => $dokter,
         ]);
     }
 
     public function tokoObat()
     {
+        $obat = DB::table('obat')
+            ->select('*')
+            ->get();
+        return view('user.tokoObat', [
+            'title' => 'Dokter Gigi - Toko Obat',
+            'active' => 'toko obat',
+            'obat' => $obat
+        ]);
+    }
+    public function checkout(Request $request)
+    {
+        $tes="tess";
+        dd($request->obat1);
         return view('user.tokoObat', [
             'title' => 'Dokter Gigi - Toko Obat',
             'active' => 'toko obat',
         ]);
     }
-
 
 
 
