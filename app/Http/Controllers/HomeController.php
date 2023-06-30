@@ -216,10 +216,15 @@ class HomeController extends Controller
             ->where('id_user', $id_user)
             ->select('*')
             ->get();
+        $pembelianku = DB::table('pembelian_obat')
+            ->where('id_user', $id_user)
+            ->select('*')
+            ->get();
         return view('user.history', [
             'title' => 'Dokter Gigi - History',
-            'active' => 'janji temu',
+            'active' => 'history',
             'janjiku' => $janjiku,
+            'pembelianku' => $pembelianku
         ]);
     }
 

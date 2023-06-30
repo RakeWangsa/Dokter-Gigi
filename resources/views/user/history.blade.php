@@ -10,10 +10,7 @@
   <div class="container">
     <div class="row align-items-center">
        <div class="col">
-          <h1>Janji Temu</h1>
-       </div>
-       <div class="col-auto">
-          <a class="btn btn-primary" href="/JanjiTemu/Buat"><i class="bi bi-person-fill-add me-2"></i><span>Buat Janji Temu</span></a>
+          <h1>History Saya</h1>
        </div>
     </div>
  </div>
@@ -94,40 +91,36 @@
       <div class="card-body">
           <h5 class="card-title">History Pembelian Obat</h5>
           <div class="table-container border">
-            {{-- <table>
+            <table>
                <thead>
                  <tr>
                    <th scope="col" class="text-center">No</th>
-                   <th scope="col" class="text-center">ID User</th>
                    <th scope="col" class="text-center">Nama</th>
-                   <th scope="col" class="text-center">Alamat</th>
-                   <th scope="col" class="text-center">Kontak</th>
-                   <th scope="col" class="text-center">Dokter</th>
+                   <th scope="col" class="text-center">Obat</th>
+                   <th scope="col" class="text-center">Total Harga</th>
                    <th scope="col" class="text-center">Waktu</th>
                  </tr>
                </thead>
                
                <tbody>
                   @php($no=1)
-                 @if(count($janji) > 0)
-                   @foreach($janji as $item)
+                 @if(count($pembelianku) > 0)
+                   @foreach($pembelianku as $item)
                      <tr>
                        <td scope="row" class="text-center">{{ $no++ }}</td>
-                       <td class="text-center">{{ $item->id_user }}</td>
                        <td class="text-center">{{ $item->nama }}</td>
-                       <td class="text-center">{{ $item->alamat }}</td>
-                       <td class="text-center">{{ $item->kontak }}</td>
-                       <td class="text-center">{{ $item->nama_dokter }}</td>
+                       <td class="text-center">{{ $item->nama_obat }}</td>
+                       <td class="text-center">{{ $item->total_harga }}</td>
                        <td class="text-center">{{ $item->waktu }}</td>
                      </tr>
                    @endforeach
                  @else
                    <tr>
-                     <td colspan="4" class="text-center">Tidak ada janji</td>
+                     <td colspan="4" class="text-center">Tidak ada pembelian</td>
                    </tr>
                  @endif
                </tbody>
-             </table> --}}
+             </table>
          </div>
       </div>
    </div>
