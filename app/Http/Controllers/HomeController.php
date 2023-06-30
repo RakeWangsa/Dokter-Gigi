@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pesanan;
 use App\Models\LogActivity;
+
+use App\Models\janjiTemu;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
 use Illuminate\Validation\Rule;
@@ -43,6 +45,22 @@ class HomeController extends Controller
             'info' => $info,
             'dokter' => $dokter,
         ]);
+    }
+
+    public function buatJanjiTemuSubmit(Request $request)
+    {
+        $email=auth()->user()->email;
+        $id_user = DB::table('Users')
+            ->where('email', $email)
+            ->select('id')
+            ->get();
+        janjiTemu::insert([
+            'id_user' => $id_user,
+            'nama' => $request->dokter,
+            'nama_dokter' => $request->dokter,
+            'waktu'=> $request->waktu,
+        ]);
+        return redirect('/JanjiTemu')->with('success','Berhasil membuat janji temu');
     }
 
     public function tokoObat()

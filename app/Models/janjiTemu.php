@@ -9,5 +9,5 @@ class janjiTemu extends Model
 {
     use HasFactory;
     protected $table = 'janji_temu';
-    protected $fillable = ['id','id_user', 'nama', 'nama_dokter', 'waktu'];
+    protected $fillable = ['id','id_user', 'nama', 'alamat', 'kontak', 'nama_dokter', 'waktu'];
 }

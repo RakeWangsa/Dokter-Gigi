@@ -16,6 +16,8 @@ return new class extends Migration
             // $table->timestamps();
             $table->string('id_user');
             $table->string('nama');
+            $table->string('alamat');
+            $table->string('kontak');
             $table->string('nama_dokter');
             $table->datetime('waktu');
         });

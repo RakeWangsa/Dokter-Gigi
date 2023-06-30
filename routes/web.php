@@ -32,6 +32,7 @@ route::get('/TokoObat', [HomeController::class, 'tokoObat'])->name('tokoObat');
 
 Route::group(['middleware' => ['auth', 'cekRole:user']], function() {
     route::get('/JanjiTemu/Buat', [HomeController::class, 'buatJanjiTemu'])->name('buatJanjiTemu')->middleware('auth');
+    route::get('/JanjiTemu/Buat/Submit', [HomeController::class, 'buatJanjiTemuSubmit'])->name('buatJanjiTemuSubmit')->middleware('auth');
     route::get('/TokoObat/Checkout', [HomeController::class, 'checkout'])->name('checkout')->middleware('auth');
 
 
