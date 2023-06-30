@@ -20,10 +20,31 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         User::create([
-            'name'      => 'admin',
-            'email'     => 'admin@gmail.com',
+            'nama'      => 'Dr. Adip',
+            'ttl'       => 'Tarakan, 10 Oktober 1941',
+            'alamat'    => 'Tarakan, Kalimantan Utara',
+            'no_hp'     => '085123456789',
+            'email'     => 'adip@gmail.com',
             'password'  => bcrypt('12345'),
-            'role'     => 'admin'
+            'role'     => 'dokter'
+        ]);
+        User::create([
+            'nama'      => 'Dr. Darpon',
+            'ttl'       => 'Sidoarjo, 16 Februari 1991',
+            'alamat'    => 'Tarakan, Kalimantan Utara',
+            'no_hp'     => '085123456789',
+            'email'     => 'darpon@gmail.com',
+            'password'  => bcrypt('12345'),
+            'role'     => 'dokter'
+        ]);
+        User::create([
+            'nama'      => 'Dr. Rehan',
+            'ttl'       => 'Tarakan, 23 Januari 1928',
+            'alamat'    => 'Tarakan, Kalimantan Utara',
+            'no_hp'     => '085123456789',
+            'email'     => 'rehan@gmail.com',
+            'password'  => bcrypt('12345'),
+            'role'     => 'dokter'
         ]);
     }
 }

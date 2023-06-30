@@ -27,10 +27,11 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
+route::get('/JanjiTemu', [HomeController::class, 'janjiTemu'])->name('janjiTemu');
+route::get('/TokoObat', [HomeController::class, 'tokoObat'])->name('tokoObat');
 
 Route::group(['middleware' => ['auth', 'cekRole:user']], function() {
-    route::get('/JanjiTemu', [HomeController::class, 'janjiTemu'])->name('janjiTemu')->middleware('auth');
-
+    route::get('/JanjiTemu/Buat', [HomeController::class, 'buatJanjiTemu'])->name('buatJanjiTemu')->middleware('auth');
 
 
 

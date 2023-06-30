@@ -26,8 +26,21 @@ class HomeController extends Controller
             'active' => 'janji temu',
         ]);
     }
+    public function buatJanjiTemu()
+    {
+        return view('user.buatJanjiTemu', [
+            'title' => 'Dokter Gigi - Buat Janji Temu',
+            'active' => 'janji temu',
+        ]);
+    }
 
-
+    public function tokoObat()
+    {
+        return view('user.tokoObat', [
+            'title' => 'Dokter Gigi - Toko Obat',
+            'active' => 'toko obat',
+        ]);
+    }
 
 
 
