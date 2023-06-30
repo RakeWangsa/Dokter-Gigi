@@ -50,13 +50,12 @@
 <div class="row">
       <div class="card col-md-12 mt-2 pb-4">
          <div class="card-body">
-             <h5 class="card-title">Janji Temu Saya</h5>
+             <h5 class="card-title">History Janji Temu</h5>
              <div class="table-container border">
                <table>
                   <thead>
                     <tr>
                       <th scope="col" class="text-center">No</th>
-                      <th scope="col" class="text-center">ID User</th>
                       <th scope="col" class="text-center">Nama</th>
                       <th scope="col" class="text-center">Alamat</th>
                       <th scope="col" class="text-center">Kontak</th>
@@ -71,7 +70,6 @@
                       @foreach($janjiku as $item)
                         <tr>
                           <td scope="row" class="text-center">{{ $no++ }}</td>
-                          <td class="text-center">{{ $item->id_user }}</td>
                           <td class="text-center">{{ $item->nama }}</td>
                           <td class="text-center">{{ $item->alamat }}</td>
                           <td class="text-center">{{ $item->kontak }}</td>
@@ -94,9 +92,9 @@
 <div class="row">
    <div class="card col-md-12 mt-2 pb-4">
       <div class="card-body">
-          <h5 class="card-title">Daftar Janji Temu</h5>
+          <h5 class="card-title">History Pembelian Obat</h5>
           <div class="table-container border">
-            <table>
+            {{-- <table>
                <thead>
                  <tr>
                    <th scope="col" class="text-center">No</th>
@@ -129,7 +127,7 @@
                    </tr>
                  @endif
                </tbody>
-             </table>
+             </table> --}}
          </div>
       </div>
    </div>

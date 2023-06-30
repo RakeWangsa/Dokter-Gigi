@@ -32,10 +32,14 @@ class HomeController extends Controller
             ->where('id_user', $id_user)
             ->select('*')
             ->get();
+        $janji = DB::table('janji_temu')
+            ->select('*')
+            ->get();
         return view('user.janjiTemu', [
             'title' => 'Dokter Gigi - Janji Temu',
             'active' => 'janji temu',
             'janjiku' => $janjiku,
+            'janji' => $janji,
         ]);
     }
     public function buatJanjiTemu()
@@ -97,7 +101,23 @@ class HomeController extends Controller
         ]);
     }
 
-
+    public function history()
+    {
+        $email=auth()->user()->email;
+        $id_user = DB::table('Users')
+            ->where('email', $email)
+            ->pluck('id')
+            ->first();
+        $janjiku = DB::table('janji_temu')
+            ->where('id_user', $id_user)
+            ->select('*')
+            ->get();
+        return view('user.history', [
+            'title' => 'Dokter Gigi - History',
+            'active' => 'janji temu',
+            'janjiku' => $janjiku,
+        ]);
+    }
 
 
 
