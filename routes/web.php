@@ -50,7 +50,7 @@ Route::group(['middleware' => ['auth', 'cekRole:user']], function() {
 
 Route::group(['middleware' => ['auth', 'cekRole:dokter']], function() {
     route::get('/Dokter/TokoObat', [HomeController::class, 'tokoObatDokter'])->name('tokoObatDokter')->middleware('auth');
-
+    route::get('/Dokter/TokoObat/Edit', [HomeController::class, 'tokoObatEdit'])->name('tokoObatEdit')->middleware('auth');
 
 
 

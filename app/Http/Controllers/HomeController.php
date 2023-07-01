@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pesanan;
 use App\Models\LogActivity;
-
+use App\Models\obat;
 use App\Models\janjiTemu;
 use App\Models\pembelianObat;
 use Illuminate\Support\Facades\DB;
@@ -252,7 +252,18 @@ class HomeController extends Controller
         ]);
     }
 
-
+    public function tokoObatEdit(Request $request)
+    {
+        for ($i = 1; $i <= 12; $i++) {
+            obat::where('id', $i)->update([
+                'nama_obat' => $request->input('nama' . $i),
+                'harga_obat' => $request->input('harga' . $i),
+            ]);
+        }
+    
+        return redirect('/Dokter/TokoObat')->with('success', 'Berhasil mengupdate toko obat');
+    }
+    
 
 
 
