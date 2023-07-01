@@ -27,16 +27,49 @@
                      <form action="/register" method="post">
                         @csrf
                         <div class="form-floating">
-                           <input type="text" name="name" class="form-control rounded-top 
-                               @error('name') is-invalid @enderror" id="name" placeholder="Name" required value="{{ old('name') }}">
-                           <label for="name">Name</label>
-                           @error('name')
+                           <input type="text" name="nama" class="form-control rounded-top 
+                               @error('nama') is-invalid @enderror" id="nama" placeholder="Nama" required value="{{ old('nama') }}">
+                           <label for="nama">Nama</label>
+                           @error('nama')
                                <div class="invalid-feedback">
                                    {{ $message }}
                                </div>
                            @enderror
                        </div>
    
+                       <div class="form-floating">
+                           <input type="text" name="ttl" class="form-control rounded-top 
+                              @error('ttl') is-invalid @enderror" id="ttl" placeholder="TTL" required value="{{ old('ttl') }}">
+                           <label for="ttl">TTL</label>
+                           @error('ttl')
+                              <div class="invalid-feedback">
+                                 {{ $message }}
+                              </div>
+                           @enderror
+                        </div>
+
+                        <div class="form-floating">
+                           <input type="text" name="alamat" class="form-control rounded-top 
+                              @error('alamat') is-invalid @enderror" id="alamat" placeholder="Alamat" required value="{{ old('alamat') }}">
+                           <label for="alamat">Alamat</label>
+                           @error('alamat')
+                              <div class="invalid-feedback">
+                                 {{ $message }}
+                              </div>
+                           @enderror
+                        </div>
+
+                        <div class="form-floating">
+                           <input type="text" name="no_hp" class="form-control rounded-top 
+                              @error('no_hp') is-invalid @enderror" id="no_hp" placeholder="No HP" required value="{{ old('no_hp') }}">
+                           <label for="no_hp">No HP</label>
+                           @error('no_hp')
+                              <div class="invalid-feedback">
+                                 {{ $message }}
+                              </div>
+                           @enderror
+                        </div>
+                    
                        <div class="form-floating">
                            <input type="email" name="email" class="form-control
                                @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" required value="{{ old('email') }}">

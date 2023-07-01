@@ -35,31 +35,10 @@ Route::group(['middleware' => ['auth', 'cekRole:user']], function() {
     route::get('/JanjiTemu/Buat/Submit', [HomeController::class, 'buatJanjiTemuSubmit'])->name('buatJanjiTemuSubmit')->middleware('auth');
     route::get('/TokoObat/Checkout', [HomeController::class, 'checkout'])->name('checkout')->middleware('auth');
     route::get('/History', [HomeController::class, 'history'])->name('history')->middleware('auth');
-
-
-
-
-    route::get('/pesananSaya', [HomeController::class, 'pesananSaya'])->name('pesananSaya')->middleware('auth');
-    route::get('/pesananSaya/buatPesanan', [HomeController::class, 'sewa'])->name('sewa')->middleware('auth');
-    route::get('/pesananSaya/buatPesanan/submit', [HomeController::class, 'sewaSubmit'])->name('sewaSubmit')->middleware('auth');
-    route::get('/pesananSaya/editPesanan/{id}', [HomeController::class, 'editPesanan'])->name('editPesanan')->middleware('auth');
-    route::get('/pesananSaya/editPesanan/{id}/submit', [HomeController::class, 'editPesananSubmit'])->name('editPesananSubmit')->middleware('auth');
-    route::get('/pesananSaya/hapus/{id}', [HomeController::class, 'hapusPesanan'])->name('hapusPesanan')->middleware('auth');
-
 });
 
 Route::group(['middleware' => ['auth', 'cekRole:dokter']], function() {
     route::get('/Dokter/TokoObat', [HomeController::class, 'tokoObatDokter'])->name('tokoObatDokter')->middleware('auth');
     route::get('/Dokter/TokoObat/Edit', [HomeController::class, 'tokoObatEdit'])->name('tokoObatEdit')->middleware('auth');
-
-
-
-    route::get('/home/admin', [HomeController::class, 'homeAdmin'])->name('homeAdmin')->middleware('auth');
-    route::get('/home/admin/logActivity', [HomeController::class, 'logActivity'])->name('logActivity')->middleware('auth');
-    Route::get('/home/admin/proses/{id}', [HomeController::class, 'prosesPesanan'])->name('prosesPesanan')->middleware('auth');
-    Route::get('/home/admin/proses/{id}/submit', [HomeController::class, 'prosesPesananSubmit'])->name('prosesPesananSubmit')->middleware('auth');
-
-    route::get('/home/admin/hapus/{id}', [HomeController::class, 'hapusPesanan'])->name('hapusPesananAdmin')->middleware('auth');
-    Route::get('/statusDiterima/{id}', [HomeController::class, 'statusDiterima'])->name('statusDiterima')->middleware('auth');
-    Route::get('/statusDitolak/{id}', [HomeController::class, 'statusDitolak'])->name('statusDitolak')->middleware('auth');
+    route::get('/Dokter/History', [HomeController::class, 'historyDokter'])->name('historyDokter')->middleware('auth');
 });
