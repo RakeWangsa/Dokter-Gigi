@@ -66,6 +66,7 @@
                   </thead>
                   
                   <tbody>
+                    @if(isset(auth()->user()->email))
                      @php($no=1)
                     @if(count($janjiku) > 0)
                       @foreach($janjiku as $item)
@@ -81,8 +82,13 @@
                       @endforeach
                     @else
                       <tr>
-                        <td colspan="4" class="text-center">Tidak ada janji</td>
+                        <td colspan="8" class="text-center">Tidak ada janji</td>
                       </tr>
+                    @endif
+                    @else
+                    <tr>
+                      <td colspan="8" class="text-center">Silahkan login terlebih dahulu</td>
+                    </tr>
                     @endif
                   </tbody>
                 </table>
@@ -125,7 +131,7 @@
                    @endforeach
                  @else
                    <tr>
-                     <td colspan="4" class="text-center">Tidak ada janji</td>
+                     <td colspan="8" class="text-center">Tidak ada janji</td>
                    </tr>
                  @endif
                </tbody>

@@ -76,7 +76,7 @@
                       @endforeach
                     @else
                       <tr>
-                        <td colspan="4" class="text-center">Tidak ada janji</td>
+                        <td colspan="8" class="text-center">Tidak ada janji</td>
                       </tr>
                     @endif
                   </tbody>
@@ -116,7 +116,7 @@
                    @endforeach
                  @else
                    <tr>
-                     <td colspan="4" class="text-center">Tidak ada pembelian</td>
+                     <td colspan="8" class="text-center">Tidak ada pembelian</td>
                    </tr>
                  @endif
                </tbody>
