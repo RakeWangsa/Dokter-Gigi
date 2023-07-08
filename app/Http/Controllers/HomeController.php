@@ -356,6 +356,7 @@ class HomeController extends Controller
             obat::where('id', $i)->update([
                 'nama_obat' => $request->input('nama' . $i),
                 'harga_obat' => $request->input('harga' . $i),
+                'stok_obat' => $request->input('stok' . $i),
             ]);
         }
     
