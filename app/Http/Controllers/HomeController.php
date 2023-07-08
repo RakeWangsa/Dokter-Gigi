@@ -378,4 +378,21 @@ class HomeController extends Controller
             'pembelian' => $pembelian
         ]);
     }
+
+    public function cetakJanji($id)
+    {
+
+        $id = base64_decode($id);
+
+        $janjiku = DB::table('janji_temu')
+        ->where('id', '=', $id)
+        ->select('*')
+        ->get();
+
+        return view('user.printJanji', [
+            "title" => "Cetak Janji",
+            'active' => 'history',
+            'janjiku' => $janjiku
+        ]);
+    }
 }

@@ -35,6 +35,7 @@ Route::group(['middleware' => ['auth', 'cekRole:user']], function() {
     route::get('/JanjiTemu/Buat/Submit', [HomeController::class, 'buatJanjiTemuSubmit'])->name('buatJanjiTemuSubmit')->middleware('auth');
     route::get('/TokoObat/Checkout', [HomeController::class, 'checkout'])->name('checkout')->middleware('auth');
     route::get('/History', [HomeController::class, 'history'])->name('history')->middleware('auth');
+    Route::get('/cetakJanji/{id}', [HomeController::class, 'cetakJanji'])->name('cetakJanji')->middleware('auth');
 });
 
 Route::group(['middleware' => ['auth', 'cekRole:dokter']], function() {
