@@ -132,6 +132,7 @@ class HomeController extends Controller
         $total_harga_obat12=$harga_obat[11]*$request->obat12;
         $total_harga=$total_harga_obat1+$total_harga_obat2+$total_harga_obat3+$total_harga_obat4+$total_harga_obat5+$total_harga_obat6+$total_harga_obat7+$total_harga_obat8+$total_harga_obat9+$total_harga_obat10+$total_harga_obat11+$total_harga_obat12;
         
+
         $nama_obat='';
         if($request->obat1>0){
             $nama_obat.=DB::table('obat')
@@ -212,6 +213,103 @@ class HomeController extends Controller
             'nama_obat' => $nama_obat,
             'total_harga' => $total_harga,
             'waktu'=> $skrg,
+        ]);
+
+        $stok_obat1 = DB::table('obat')
+        ->where('id', '1')
+        ->pluck('stok_obat')
+        ->first();
+        $sisa_obat1 = $stok_obat1 - $request->obat1;
+        obat::where('id', '1')->update([
+            "stok_obat"=> $sisa_obat1,
+        ]);
+        $stok_obat2 = DB::table('obat')
+        ->where('id', '2')
+        ->pluck('stok_obat')
+        ->first();
+        $sisa_obat2 = $stok_obat2 - $request->obat2;
+        obat::where('id', '2')->update([
+            "stok_obat"=> $sisa_obat2,
+        ]);
+        $stok_obat3 = DB::table('obat')
+        ->where('id', '3')
+        ->pluck('stok_obat')
+        ->first();
+        $sisa_obat3 = $stok_obat3 - $request->obat3;
+        obat::where('id', '3')->update([
+            "stok_obat"=> $sisa_obat3,
+        ]);
+        $stok_obat4 = DB::table('obat')
+        ->where('id', '4')
+        ->pluck('stok_obat')
+        ->first();
+        $sisa_obat4 = $stok_obat4 - $request->obat4;
+        obat::where('id', '4')->update([
+            "stok_obat"=> $sisa_obat4,
+        ]);
+        $stok_obat5 = DB::table('obat')
+        ->where('id', '5')
+        ->pluck('stok_obat')
+        ->first();
+        $sisa_obat5 = $stok_obat5 - $request->obat5;
+        obat::where('id', '5')->update([
+            "stok_obat"=> $sisa_obat5,
+        ]);
+        $stok_obat6 = DB::table('obat')
+        ->where('id', '6')
+        ->pluck('stok_obat')
+        ->first();
+        $sisa_obat6 = $stok_obat6 - $request->obat6;
+        obat::where('id', '6')->update([
+            "stok_obat"=> $sisa_obat6,
+        ]);
+        $stok_obat7 = DB::table('obat')
+        ->where('id', '7')
+        ->pluck('stok_obat')
+        ->first();
+        $sisa_obat7 = $stok_obat7 - $request->obat7;
+        obat::where('id', '7')->update([
+            "stok_obat"=> $sisa_obat7,
+        ]);
+        $stok_obat8 = DB::table('obat')
+        ->where('id', '8')
+        ->pluck('stok_obat')
+        ->first();
+        $sisa_obat8 = $stok_obat8 - $request->obat8;
+        obat::where('id', '8')->update([
+            "stok_obat"=> $sisa_obat8,
+        ]);
+        $stok_obat9 = DB::table('obat')
+        ->where('id', '9')
+        ->pluck('stok_obat')
+        ->first();
+        $sisa_obat9 = $stok_obat9 - $request->obat9;
+        obat::where('id', '9')->update([
+            "stok_obat"=> $sisa_obat9,
+        ]);
+        $stok_obat10 = DB::table('obat')
+        ->where('id', '10')
+        ->pluck('stok_obat')
+        ->first();
+        $sisa_obat10 = $stok_obat10 - $request->obat10;
+        obat::where('id', '10')->update([
+            "stok_obat"=> $sisa_obat10,
+        ]);
+        $stok_obat11 = DB::table('obat')
+        ->where('id', '11')
+        ->pluck('stok_obat')
+        ->first();
+        $sisa_obat11 = $stok_obat11 - $request->obat11;
+        obat::where('id', '11')->update([
+            "stok_obat"=> $sisa_obat11,
+        ]);
+        $stok_obat12 = DB::table('obat')
+        ->where('id', '12')
+        ->pluck('stok_obat')
+        ->first();
+        $sisa_obat12 = $stok_obat12 - $request->obat12;
+        obat::where('id', '12')->update([
+            "stok_obat"=> $sisa_obat12,
         ]);
         return redirect('/History')->with('success','Berhasil membeli obat');
     }

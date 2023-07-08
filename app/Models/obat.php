@@ -10,5 +10,5 @@ class obat extends Model
     use HasFactory;
     public $timestamps = false;
     protected $table = 'obat';
-    protected $fillable = ['id','nama_obat', 'harga_obat'];
+    protected $fillable = ['id','nama_obat', 'harga_obat','stok_obat'];
 }

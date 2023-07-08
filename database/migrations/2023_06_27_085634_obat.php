@@ -16,6 +16,7 @@ return new class extends Migration
             // $table->timestamps();
             $table->string('nama_obat');
             $table->integer('harga_obat');
+            $table->integer('stok_obat');
         });
     }
 

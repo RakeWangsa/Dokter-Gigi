@@ -70,50 +70,62 @@ class DatabaseSeeder extends Seeder
         obat::create([
             'nama_obat'      => 'Amoxicillin',
             'harga_obat'       => '50000',
+            'stok_obat'        => '100',
         ]);
         obat::create([
             'nama_obat'      => 'Ibuprofen',
             'harga_obat'       => '40000',
+            'stok_obat'        => '100',
         ]);
         obat::create([
             'nama_obat'      => 'Lidocaine',
             'harga_obat'       => '30000',
+            'stok_obat'        => '100',
         ]);
         obat::create([
             'nama_obat'      => 'Chlorhexidine',
             'harga_obat'       => '20000',
+            'stok_obat'        => '100',
         ]);
         obat::create([
             'nama_obat'      => 'Fluoride varnish',
             'harga_obat'       => '25000',
+            'stok_obat'        => '100',
         ]);
         obat::create([
             'nama_obat'      => 'Metronidazole',
             'harga_obat'       => '55000',
+            'stok_obat'        => '100',
         ]);
         obat::create([
             'nama_obat'      => 'Acetaminophen',
             'harga_obat'       => '60000',
+            'stok_obat'        => '100',
         ]);
         obat::create([
             'nama_obat'      => 'Benzocaine',
             'harga_obat'       => '20000',
+            'stok_obat'        => '100',
         ]);
         obat::create([
             'nama_obat'      => 'Hydrogen peroxide',
             'harga_obat'       => '30000',
+            'stok_obat'        => '100',
         ]);
         obat::create([
             'nama_obat'      => 'Calcium hydroxide',
             'harga_obat'       => '50000',
+            'stok_obat'        => '100',
         ]);
         obat::create([
             'nama_obat'      => 'Oral rinse',
             'harga_obat'       => '45000',
+            'stok_obat'        => '100',
         ]);
         obat::create([
             'nama_obat'      => 'Dental adhesive',
             'harga_obat'       => '35000',
+            'stok_obat'        => '100',
         ]);
     }
 }
