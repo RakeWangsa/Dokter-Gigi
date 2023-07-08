@@ -395,4 +395,21 @@ class HomeController extends Controller
             'janjiku' => $janjiku
         ]);
     }
+
+    public function cetakPembelian($id)
+    {
+
+        $id = base64_decode($id);
+
+        $pembelianku = DB::table('pembelian_obat')
+        ->where('id', '=', $id)
+        ->select('*')
+        ->get();
+
+        return view('user.printPembelian', [
+            "title" => "Struk Pembelian",
+            'active' => 'history',
+            'pembelianku' => $pembelianku
+        ]);
+    }
 }

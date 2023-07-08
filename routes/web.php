@@ -36,6 +36,7 @@ Route::group(['middleware' => ['auth', 'cekRole:user']], function() {
     route::get('/TokoObat/Checkout', [HomeController::class, 'checkout'])->name('checkout')->middleware('auth');
     route::get('/History', [HomeController::class, 'history'])->name('history')->middleware('auth');
     Route::get('/cetakJanji/{id}', [HomeController::class, 'cetakJanji'])->name('cetakJanji')->middleware('auth');
+    Route::get('/cetakPembelian/{id}', [HomeController::class, 'cetakPembelian'])->name('cetakPembelian')->middleware('auth');
 });
 
 Route::group(['middleware' => ['auth', 'cekRole:dokter']], function() {

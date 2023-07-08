@@ -101,6 +101,7 @@
                    <th scope="col" class="text-center">Obat</th>
                    <th scope="col" class="text-center">Total Harga</th>
                    <th scope="col" class="text-center">Waktu</th>
+                   <th scope="col" class="text-center">Action</th>
                  </tr>
                </thead>
                
@@ -114,6 +115,7 @@
                        <td class="text-center">{{ $item->nama_obat }}</td>
                        <td class="text-center">{{ $item->total_harga }}</td>
                        <td class="text-center">{{ $item->waktu }}</td>
+                       <td class="text-center"><a class="btn btn-secondary" a href="{{ route('cetakPembelian', ['id' => base64_encode($item->id)]) }}">Cetak</a></td>
                      </tr>
                    @endforeach
                  @else
